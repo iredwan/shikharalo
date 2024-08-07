@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand{
+    img{
+
+        height: 70PX;
+    }
+}
+
+nav{
+    padding: 20px 0px;
+    background:linear-gradient(315deg, #2A398F, #91278F) !important; 
+    opacity: 98%;
+    svg{
+        padding-left: 5px;
+    }
+    path{
+        fill: white;
+    }
+    a{
+        /* color: gold !important; */
+        font-weight: 600 !important;
+
+        &:hover{
+            font-weight: 700 !important;
+        }
+    }
+}
+.nav_style{
+        color: white;
+        position: relative;
+        
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 0;
+            border-radius: 10px;
+            height: 3px;
+            background: white;
+            transition: width 0.5s ease;
+        }
+        &:hover::after{
+            color: white !important;
+            width: 100%;
+        }
+
+}
+.logo_taitel{
+    font-size: 18px !important;
+    color: white !important;;
+}
+
+
+.text-gradient{
+    background:linear-gradient(312deg, #2A398F, #91278F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient{
+    background: linear-gradient(312deg, #2A398F, #91278F);
+}
+.border-6{
+    border-radius: 1rem;
+}
+
+.btn-primary{
+    background-color: #91278F;
+    border: 0px ;
+    &:hover{
+        background-color: #2A398F;
+    }
+}
+
+.medelimg{
+  background-image: url(./img/upeventMedel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  .text{
+    background-color: rgba(240, 248, 255, 0.644);  
+    border: 2px solid #91278F;
+    margin: 100px 0px;
+
+  }
+  .img{
+    filter: opacity(60%);
+    filter: contrast(150%);
+    /* filter: blur(5px); */
+  }
+}
+.color1{
+    color: #91278F;
+}
+
+.footer_back{
+    background-color: #2A398F;
+}
+
