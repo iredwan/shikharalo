@@ -13,8 +13,8 @@
         
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
       <div class="container">
-        <a class="navbar-brand ps-1" href="#"><img src="./img/logo.png" alt=""></a>
-        <a class="nav-link fs-6 logo_taitel me-auto ps-2">
+        <a class="navbar-brand ps-1" href="#"><img class="navbar-logo" src="./img/logo.png" alt=""></a>
+        <a href="#" class="nav-link fs-6 logo_taitel me-auto ps-2">
           শিক্ষার আলো
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -202,10 +202,36 @@
         </div>
         <div class="row">
           <div class="col-12 medelimg p-0 d-flex justify-content-around">
-            <div class="text p-3 border-6">
-              <p class="fw-bold display-6 text-gradient back text-center">Our Next Event</p>
-              <p class="text-gradient display-6 fw-bolder text-center back" id="demo"></p>
-              <p class="text-gradient h6 fw-bolder text-center back">15 Aug 2024</p>
+            <div class="text">
+              <div class="d-flex justify-content-center">
+                <p class="text-light display-5 fw-bolder text-center back d-inline-block p-3 rounded-3">Our Next Event</p>
+              </div>
+              <!-- Timer -->
+              <div class="d-flex justify-content-around gap-1 pb-3">
+                <!-- Days -->
+                <div class="con-border bg-light rounded-3">
+                  <p class="text-center m-0 p-2" id="day">00</p>
+                  <div class="text-center time px-2">Days</div>
+                </div>
+                <!-- Hours -->
+                <div class="con-border bg-light rounded-3">
+                  <p class="text-center m-0 p-2" id="hours">00</p>
+                  <div class="text-center time px-2">Hours</div>
+                </div>
+                <!-- Minutes -->
+                <div class="con-border bg-light rounded-3">
+                  <p class="text-center m-0 p-2" id="minutes">00</p>
+                  <div class="text-center time px-2">Minutes</div>
+                </div>
+                <!-- Seconds -->
+                <div class="con-border bg-light rounded-3">
+                  <p class="text-center m-0 p-2" id="seconds">00</p>
+                  <div class="text-center time px-2">Seconds</div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <p class="text-light h3 fw-bolder text-center back d-inline-block p-3 rounded-3">15 Aug 2024</p>
+              </div>
             </div>
           </div>
         </div>
@@ -242,7 +268,10 @@
               <i class="bi bi-telephone-fill text-white fs-3 p-2"></i>
             </a>
           </div>
-          <span class="text-center border-top text-white small ">Click the icon for contact us</span>
+          <div class="d-flex justify-content-center">
+            <hr class="hline m-0 p-0 w-50">
+          </div>
+          <span class="text-center text-white small ">Click the icon for contact us</span>
         </div>
         <!-- copy Right -->
         <div class="row p-2">
@@ -259,34 +288,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script>
-      // Set the date we're counting down to
       var countDownDate = new Date("Aug 15, 2024 15:37:25").getTime();
-      
-      // Update the count down every 1 second
       var x = setInterval(function() {
-      
-        // Get today's date and time
         var now = new Date().getTime();
-          
-        // Find the distance between now and the count down date
         var distance = countDownDate - now;
-          
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          
-        // Output the result in an element with id="demo"
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-          
-        // If the count down is over, write some text 
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-      }, 1000);
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("day").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      },1000);
       </script>
   </body>
 </html>
